@@ -1,254 +1,814 @@
 <!DOCTYPE html>
-
 <html>
-
   <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
-    <title>Sequence 2</title>
+    <title>Test</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <style>
 
+    <style>
+    	
     body {
       text-align: center;
-      background-color: black;
+      background-color: #7D2ADD;
+      margin: 0;
+    }
+
+    div {
+        position: fixed;
+        display: block;
     }
 
     .b {
-      height: 30000px;
+      position: absolute;
+      width: 100vw;
+      height: 10000px;
     }
 
-    /* Styles for interactions below*/
 
-    .door {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
+    .l01 {
+    	top: 0;
+    	width: 100vw;
+    	height: 100vh;
+    	background-color: #7D2ADD;
+    	z-index: 100;
+    }
+
+    .l02 {
+    	top: 0;
+    	width: 100vw;
+    	height: 100vh;
+    	background-color: #EA213A;
+    	z-index: 95;
+    }
+
+
+    
+
+    .l03 {
+    	top: 0;
+    	width: 50vw;
+    	height: 33.33333vh;
+    	z-index: 90;
+    	clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    }
+
+    .l03-1 {
+        background-color: #E525A5;
+    }
+    .l03-2 {
+        background-color: #E525A5;
+    	margin-left: 50vw;
+    }
+    .l03-3 {
+        background-color: #E227D9;
+    	margin-top: 33.3333vh;
+    }
+    .l03-4 {
+        background-color: #E227D9;
+    	margin-left: 50vw;
+    	margin-top: 33.3333vh;
+    }
+    .l03-5 {
+        background-color: #AE28E0;
+    	margin-top: 66.6666vh;
+    }
+    .l03-6 {
+        background-color: #AE28E0;
+		margin-left: 50vw;
+		margin-top: 66.6666vh;
+    }
+
+
+    .l03container {
+
+    }
+
+
+    .l04 {
+    	bottom: 0;
+    	width: 50vw;
+    	height: 33.33333vh;
+    	background-color: black;
+    	z-index: 95;
+    	clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    }
+
+    .l04-1 {
+        background-color: #EA213A;
+
+    }
+    .l04-2 {
+        background-color: #EA213A;
+    	margin-left: 50vw;
+    }
+    .l04-3 {
+        background-color: #EA213A;
+    	margin-bottom: 33.3333vh;
+    }
+    .l04-4 {
+        background-color: #EA213A;
+    	margin-left: 50vw;
+    	margin-bottom: 33.3333vh;
+    }
+    .l04-5 {
+        background-color: #EA213A;
+    	margin-bottom: 66.6666vh;
+    }
+    .l04-6 {
+        background-color: #EA213A;
+		margin-left: 50vw;
+		margin-bottom: 66.6666vh;
+    }
+
+
+
+
+    .l05 {
+    	top: 0;
+    	width: 25vw;
+    	height: 16.66666vh;
+    	background-color: white;
+    	z-index: 98;
+    	clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    }
+
+
+    .l05container {
+
+    }
+
+
+    .l05-1 {
+        background-color: #4D2CDB;
+    }
+    .l05-2 {
+        background-color: #4D2CDB;
+    	margin-left: 25vw;
+    }
+    .l05-3 {
+        background-color: #4D2CDB;
+    	margin-left: 50vw;
+    }
+    .l05-4 {
+        background-color: #4D2CDB;
+    	margin-left: 75vw;
+    }
+
+    .l05-5 {
+        background-color: #7D2ADD;
+    	margin-top: 16.6666vh;
+    }
+    .l05-6 {
+        background-color: #7D2ADD;
+    	margin-top: 16.6666vh;
+    	margin-left: 25vw;
+    }
+    .l05-7 {
+        background-color: #7D2ADD;
+    	margin-top: 16.6666vh;
+    	margin-left: 50vw;
+    }
+    .l05-8 {
+        background-color: #7D2ADD;
+    	margin-top: 16.6666vh;
+    	margin-left: 75vw;
+    }
+
+    .l05-9 {
+        background-color: #AE28E0;
+    	margin-top: 33.3333vh;
+    }
+    .l05-10 {
+        background-color: #AE28E0;
+    	margin-top: 33.3333vh;
+    	margin-left: 25vw;
+    }
+    .l05-11 {
+        background-color: #AE28E0;
+    	margin-top: 33.3333vh;
+    	margin-left: 50vw;
+    }
+    .l05-12 {
+        background-color: #AE28E0;
+    	margin-top: 33.3333vh;
+    	margin-left: 75vw;
+    }
+
+    .l05-13 {
+        background-color: #E227D9;
+    	margin-top: 50vh;
+    }
+    .l05-14 {
+        background-color: #E227D9;
+    	margin-top: 50vh;
+    	margin-left: 25vw;
+    }
+    .l05-15 {
+        background-color: #E227D9;
+    	margin-top: 50vh;
+    	margin-left: 50vw;
+    }
+    .l05-16 {
+        background-color: #E227D9;
+    	margin-top: 50vh;
+    	margin-left: 75vw;
+    }
+
+    .l05-17 {
+        background-color: #E525A5;
+    	margin-top: 66.6666vh;
+    }
+    .l05-18 {
+        background-color: #E525A5;
+    	margin-top: 66.6666vh;
+    	margin-left: 25vw;
+    }
+    .l05-19 {
+        background-color: #E525A5;
+    	margin-top: 66.6666vh;
+    	margin-left: 50vw;
+    }
+    .l05-20 {
+        background-color: #E525A5;
+    	margin-top: 66.6666vh;
+    	margin-left: 75vw;
+    }
+
+    .l05-21 {
+        background-color: #E82374;
+    	margin-top: 83.3333vh;
+    }
+    .l05-22 {
+        background-color: #E82374;
+    	margin-top: 83.3333vh;
+    	margin-left: 25vw;
+    }
+    .l05-23 {
+        background-color: #E82374;
+    	margin-top: 83.3333vh;
+    	margin-left: 50vw;
+    }
+    .l05-24 {
+        background-color: #E82374;
+    	margin-top: 83.3333vh;
+    	margin-left: 75vw;
+    }
+
+
+
+
+
+    .l06 {
         bottom: 0;
-        background-color: red;
-        display: block;
-        z-index: 2;
-    }
-
-    .door2 {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
+        width: 25vw;
+        height: 16.66666vh;
         background-color: black;
-        display: block;
-        z-index: 5;
+        z-index: 100;
+        clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
     }
 
-    .black1 {
-        display: block;
-        position: fixed;
+
+    .l06-1 {
+        background-color: #EA213A;
+    }
+    .l06-2 {
+        background-color: #EA213A;
+        margin-left: 25vw;
+    }
+    .l06-3 {
+        background-color: #EA213A;
+        margin-left: 50vw;
+    }
+    .l06-4 {
+        background-color: #EA213A;
+        margin-left: 75vw;
+    }
+
+    .l06-5 {
+        background-color: #EA213A;
+        margin-bottom: 16.6666vh;
+    }
+    .l06-6 {
+        background-color: #EA213A;
+        margin-bottom: 16.6666vh;
+        margin-left: 25vw;
+    }
+    .l06-7 {
+        background-color: #EA213A;
+        margin-bottom: 16.6666vh;
+        margin-left: 50vw;
+    }
+    .l06-8 {
+        background-color: #EA213A;
+        margin-bottom: 16.6666vh;
+        margin-left: 75vw;
+    }
+
+    .l06-9 {
+        background-color: #EA213A;
+        margin-bottom: 33.3333vh;
+    }
+    .l06-10 {
+        background-color: #EA213A;
+        margin-bottom: 33.3333vh;
+        margin-left: 25vw;
+    }
+    .l06-11 {
+        background-color: #EA213A;
+        margin-bottom: 33.3333vh;
+        margin-left: 50vw;
+    }
+    .l06-12 {
+        background-color: #EA213A;
+        margin-bottom: 33.3333vh;
+        margin-left: 75vw;
+    }
+
+    .l06-13 {
+        background-color: #EA213A;
+        margin-bottom: 50vh;
+    }
+    .l06-14 {
+        background-color: #EA213A;
+        margin-bottom: 50vh;
+        margin-left: 25vw;
+    }
+    .l06-15 {
+        background-color: #EA213A;
+        margin-bottom: 50vh;
+        margin-left: 50vw;
+    }
+    .l06-16 {
+        background-color: #EA213A;
+        margin-bottom: 50vh;
+        margin-left: 75vw;
+    }
+
+    .l06-17 {
+        background-color: #EA213A;
+        margin-bottom: 66.6666vh;
+    }
+    .l06-18 {
+        background-color: #EA213A;
+        margin-bottom: 66.6666vh;
+        margin-left: 25vw;
+    }
+    .l06-19 {
+        background-color: #EA213A;
+        margin-bottom: 66.6666vh;
+        margin-left: 50vw;
+    }
+    .l06-20 {
+        background-color: #EA213A;
+        margin-bottom: 66.6666vh;
+        margin-left: 75vw;
+    }
+
+    .l06-21 {
+        background-color: #EA213A;
+        margin-bottom: 83.3333vh;
+    }
+    .l06-22 {
+        background-color: #EA213A;
+        margin-bottom: 83.3333vh;
+        margin-left: 25vw;
+    }
+    .l06-23 {
+        background-color: #EA213A;
+        margin-bottom: 83.3333vh;
+        margin-left: 50vw;
+    }
+    .l06-24 {
+        background-color: #EA213A;
+        margin-bottom: 83.3333vh;
+        margin-left: 75vw;
+    }
+
+
+
+    .l07 {
+        top: 0;
         width: 100vw;
         height: 100vh;
-        background-color: black;
-        z-index: 10;
-        top: 0;
+        background-color: #7D2ADD;
+        z-index: 195;
     }
-
-    .six {
-        display: block;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: black;
-        z-index: 15;
-        margin-left: 0vw;
-        margin-bottom: 33vh;
-        top: 0;
-    }
-
-    .six-set {
-        display: block;
-        width: 50vw;
-        height: 33.33vh;
-        float: left;
-        background-color: white;
-        bottom: 0;
-    }
-
-    .stripes {
-        display: none;
-        position: fixed;
-        top: 0;
-        width: 80vw;
-        height: 100vh;
-        z-index: 20;
-        margin-left: 10vw;
-        margin-top: 10vh;
-    }
-
-    .stripe {
-        display: block;
-        width: 27vw;
-        height: 100vh;
-        float: left;
-        background-color: red;
-        margin-left: 9vw;
-    }
-
-    .per-stripes {
-        display: block;
-        position: fixed;
-        top: 0;
-        width: 80vw;
-        height: 100vh;
-        z-index: 25;
-        margin-left: 10vw;
-        transform: perspective(20px) rotateX(45deg);
-    }
-
-    .p-stripe {
-        display: block;
-        width: 27vw;
-        height: 100vh;
-        float: left;
-        background-color: red;
-        margin-left: 9vw;
-    }
-
-
-    .middle {
-        display: block;
-        width: 1vw;
-        height: 1.5vh;
-        position: fixed;
-        background-color: red;
-        z-index: 30;
-        top: 0;
-        margin-left: 49.5vw;
-        margin-top: 46vh;
-    }
-
-    .tiles {
-        position: fixed;
-        top: 0;
-        width: 90vw;
-        height: 90vh;
-        display: block;
-        background-color: white;
-        z-index: 35;
-        margin-left: 5vw;
-        margin-top: 5vh;
-    }
-
-    .tile {
-        display: block;
-        width: 18vw;
-        height: 20vh;
-        background-color: red;
-        float: left;
-        margin-left: 3.5vw;
-        margin-top: 2vh;
-    }
-
-
-    .bars {
-        position: fixed;
-        display: block;
-        width: 100vw;
-        height: 86vh;
-        top: 0;
-        z-index: 40;
-        margin-left: 0vw;
-        margin-top: 0px;
-    }
-
-    .bar {
-        display: block;
-        float: left;
-        width: 100vw;
-        height: 25vh;
-        background-color: black;
-        margin-bottom: 0vh;
-    }
-
 
 
     </style>
   </head>
   <body>
 
-    <div id="skrollr-body" class="b">
+
+  	<div id="skrollr-body" class="b">
     </div>
 
-    <div class="door" data-0="clip-path: polygon(46% 0%, 54% 0%, 100% 100%, 0% 100%); height: 0vh; display: block;" data-900="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); height: 100vh; display: block;" data-2100="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); height: 100vh; display: none;"></div>
+    <!--<div class="l01" data-0p="clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 0% 100%); height: 100vh; display: block;" data-200p="clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 0% 100%); height: 100vh; display: block;" data-300p="clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 0% 100%); height: 100vh; display: none;"></div>-->
 
-    <div class="door2" data-1000="clip-path: polygon(0% 0%, 100% 0%, 54% 100%, 46% 100%); height: 0vh; display: block;" data-1900="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); height: 100vh; display: block;" data-2100="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); height: 100vh; display: none;"></div>
+    <div class="l01" 
 
-    <div class="black1" data-0="display: none;" data-1900="display: none;" data-2000="display: block;" data-4000="display: block; margin-top: -5vh;"></div>
+    data-0p="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); display: block;" data-200p="clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 0% 100%); display: block;" data-400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;" data-600p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"></div>
 
-    <div class="six" data-0="display: none; margin-top: 0vh;" data-2100="display: block; margin-top: 0vh;" data-4000="display: block; margin-top: 0vh;" data-4100="display: none; margin-top: 0vh;">
-        <div class="six-set" data-2100="clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); height: 0vh; margin-bottom: 33vh; width:" data-2900="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); height: 33.33vh; margin-bottom: 0vh;"></div>
+    <div class="l02"
 
-        <div class="six-set" data-2100="clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); height: 0vh; margin-bottom: 33vh;" data-2900="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); height: 33.33vh; margin-bottom: 0vh;"></div>
+    data-500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;" data-700p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;" data-900p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;" data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"></div>
 
-        <div class="six-set" data-2100="clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); height: 0vh; margin-bottom: 33vh;" data-2900="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); height: 33.33vh; margin-bottom: 0vh;"></div>
 
-        <div class="six-set" data-2100="clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); height: 0vh; margin-bottom: 33vh;" data-2900="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); height: 33.33vh; margin-bottom: 0vh;"></div>
+    <div class="l03container">
+    	<div class="l03 l03-1"
+    	data-1000p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+    	data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+    	data-1300p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+    	data-1500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
-        <div class="six-set" data-2100="clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); height: 0vh; margin-bottom: 33vh;" data-2900="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); height: 33.33vh; margin-bottom: 0vh;"></div>
+    	<div class="l03 l03-2"
+    	data-1000p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1300p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-1500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
-        <div class="six-set" data-2100="clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); height: 0vh; margin-bottom: 33vh;" data-2900="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); height: 33.33vh; margin-bottom: 0vh;"></div>
-        <!--<div class="six-set"></div>
-        <div class="six-set"></div>
-        <div class="six-set"></div>
-        <div class="six-set"></div>
-        <div class="six-set"></div>-->
+    	<div class="l03 l03-3"
+    	data-1000p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1300p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-1500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
+
+    	<div class="l03 l03-4"
+    	data-1000p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1300p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-1500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
+
+    	<div class="l03 l03-5"
+    	data-1000p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1300p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-1500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
+
+    	<div class="l03 l03-6"
+    	data-1000p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1100p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1300p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-1500p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
+    	<!--<div class="l03 l03-2"></div>
+    	<div class="l03 l03-3"></div>
+    	<div class="l03 l03-4"></div>
+    	<div class="l03 l03-5"></div>
+    	<div class="l03 l03-6"></div>-->
     </div>
 
-    <div class="stripes" data-3000="margin-top: 10vh; display: none; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);" data-3100="margin-top: 10vh; display: block; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);" data-3800="margin-top: 0vh; display: block; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);" data-4300="margin-top: 0vh; display: block; clip-path: polygon(50% 0%, 75% 0%, 50% 100%, 25% 100%);" data-4800="margin-top: 0vh; display: block; clip-path: polygon(25% 0%, 50% 0%, 75% 100%, 50% 100%);" data-5300="margin-top: 0vh; display: block; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);" data-5680="margin-top: 0vh; display: none; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);">
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-    </div>
+    <div class="l04container">
+    	<div class="l04 l04-1"
+    	data-1550p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1750p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1950p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2150p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
-    <div class="per-stripes" data-6500="display: none; transform: perspective(1000px) rotateX(0deg);" data-6700=" display: block; transform: perspective(1000px) rotateX(0deg);" data-8500=" display: block; transform: perspective(20px) rotateX(45deg);">
-        <div class="p-stripe"></div>
-        <div class="p-stripe"></div>
-    </div>
+    	<div class="l04 l04-2"
+    	data-1550p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1750p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1950p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2150p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
-    <div class="middle" data-8400="display: none; width: 1vw; height: 1.5vh; margin-top: 46vh; margin-left: 49.5vw;" data-8800="display: block; width: 1vw; height: 1.5vh; margin-top: 46vh; margin-left: 49.5vw;" data-10000="display: block; width: 100vw; height: 100vh; margin-top: 0vh; margin-left: 0vw;"></div>
+    	<div class="l04 l04-3"
+    	data-1550p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1750p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1950p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2150p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
+    	<div class="l04 l04-4"
+    	data-1550p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1750p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1950p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2150p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
-    <div class="tiles" data-10300="display: none; margin-top: 100vh; margin-left: 5vw;" data-10600="display: block; margin-top: 100vh; margin-left: 5vw;" data-11000="display: block; margin-top: 5vh; margin-left: 5vw;" data-11500="display: block; margin-top: 5vh; margin-left: -5vw;" data-12200="display: none; margin-top: 5vh; margin-left: -5vw;">
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
+    	<div class="l04 l04-5"
+    	data-1550p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1750p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1950p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2150p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
 
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-        <div class="tile" data-11000="width: 18vw;" data-11500="width: 110vw;"></div>
-    </div>
-
-
-    <div class="bars" data-11700="display: none;" data-12000="display: block;">
-        <div class="bar" data-13000="height: 25vh; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); margin-top: 0vh;" data-14000="height: 0vh; clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%); margin-top: 20vh;"></div>
-        <div class="bar" data-13000="height: 25vh; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); margin-top: 0vh;" data-14000="height: 0vh; clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%); margin-top: 20vh;"></div>
-        <div class="bar" data-13000="height: 25vh; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); margin-top: 0vh;" data-14000="height: 0vh; clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%); margin-top: 20vh;"></div>
-        <div class="bar" data-13000="height: 25vh; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); margin-top: 0vh;" data-14000="height: 0vh; clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%); margin-top: 20vh;"></div>
+    	<div class="l04 l04-6"
+    	data-1550p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-1750p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-1950p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2150p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"></div>
     </div>
 
 
+    <div class="l05container">
+        <div class="l05 l05-1"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-2"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-3"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-4"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l05 l05-5"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-6"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-7"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-8"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l05 l05-9"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-10"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-11"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-12"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l05 l05-13"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-14"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-15"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-16"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l05 l05-17"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-18"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-19"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-20"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l05 l05-21"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-22"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-23"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l05 l05-24"
+        data-2200p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-2400p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-2600p="clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%); display: block;"
+        data-2800p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
 
 
+    </div>
+
+
+    <div class="l06container">
+        <div class="l06 l06-1"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-2"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-3"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-4"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l06 l06-5"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-6"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-7"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-8"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l06 l06-9"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-10"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-11"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-12"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l06 l06-13"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-14"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-15"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-16"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l06 l06-17"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-18"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-19"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-20"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+
+        <div class="l06 l06-21"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-22"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-23"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+        <div class="l06 l06-24"
+        data-2850p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: none;"
+        data-3050p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3250p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;"
+        data-3450p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;"
+        ></div>
+</div>
+
+
+<div class="l07"
+    
+    data-3500p="clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%); display: block;" data-3700p="clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%); display: block;" data-3900p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%); display: block;" data-4100p="clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);"></div>
 
 
 
@@ -256,10 +816,12 @@
 
 
   <script type="text/javascript" src="skrollr.min.js"></script>
+  <script src="theScript.js" type="text/javascript"></script>
   <script type="text/javascript">
 
       var s = skrollr.init();
 
   </script>
+  
   </body>
 </html>
